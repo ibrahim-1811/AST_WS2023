@@ -17,7 +17,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: install dep
-        run: python -m pip install pytest
+        run: 
+          python -m pip install pytest
+          sudo apt install 
+            \python3-sphinx \
+            python3-sphinx-autodoc-typehints \
+            python3-sphinx-rtd-theme
 
       - name: RUN TESTS
         run: pytest
