@@ -16,8 +16,8 @@ jobs:
       - name: Check Code
         uses: actions/checkout@v2
 
-      - name: install dep
-        run: pip3 install pytest .
+      #- name: install dep
+      #  run: pip3 install pytest .
 
       - name: RUN TESTS
         run: python3 -m pytest
