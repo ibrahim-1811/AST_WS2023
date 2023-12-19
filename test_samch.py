@@ -22,7 +22,7 @@ class TestStateMachine(unittest.TestCase):
 
     def test_monitor_battery_and_collision_low_battery(self):
         node = rclpy.create_node('test_node')
-        state = MonitorBatteryAndCollision(node, battery_threshold=0, collision_threshold_distance=1, timeout=5)
+        state = MonitorBatteryAndCollision(node, battery_threshold=90, collision_threshold_distance=1, timeout=5)
 
         # Simulate low battery by publishing a message
         low_battery_msg = String()
