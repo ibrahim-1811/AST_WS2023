@@ -50,7 +50,8 @@ class MonitorBatteryAndCollision(smach.State):
         self.logger.info('Executing state MONITOR_BATTERY_AND_COLLISION')
         while (time.time() - self.start_time) < self.timeout:
             time.sleep(0.1)
-            rclpy.spin_once(self.node)
+            print("hello")
+            rclpy.spin_once(self.node,timeout_sec=1)
 
             # priority: collision > battery
             if self.collision_possible:
@@ -110,8 +111,8 @@ def main(args=None):
     node = rclpy.create_node('safety_features_node')
 
     sm = smach.StateMachine(['overall_success'])
-    battery_threshold = 20
-    collision_threshold_distance = 0.3
+    battery_threshold = 90
+    collision_threshold_distance = 0.5
     timeout = 1000
 
     with sm:
